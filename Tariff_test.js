@@ -15,8 +15,7 @@ Scenario('test endless tariff', async ({I}) => {
   I.scrollTo('//div//p[contains(@class,"b-plans-pillar__price b-plans-pillar__price_style_single")]');
   let price = await I.grabTextFrom('//div//p[contains(@class,"b-plans-pillar__price b-plans-pillar__price_style_single")]/strong');
   I.click('//div[contains(@class,"b-plans-pillar__item b-plans-pillar__item_type_infinite i-analytics i-analytics_event_google i-analytics_event_yandex")]//div[contains(normalize-space(text()),"Заказать")]');
-  I.wait(5);
-  I.waitForElement('//div[contains(@class,"order-footer-price__total")]',10);
+  I.waitForElement('//div[contains(@class,"order-footer-price__total")]',15);
   let foo = await I.grabTextFrom('//div[contains(@class,"order-footer-price__total")]//span[contains(@class,"order-footer-price__price")]');
   let startPrice = price.replace(/\W/g,'');
   console.log(`startPrice = ${startPrice}`);
