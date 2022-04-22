@@ -18,8 +18,6 @@ Scenario('test endless tariff', async ({I}) => {
   I.waitForElement('//div[contains(@class,"order-footer-price__total")]',15);
   let foo = await I.grabTextFrom('//div[contains(@class,"order-footer-price__total")]//span[contains(@class,"order-footer-price__price")]');
   let startPrice = price.replace(/\W/g,'');
-  console.log(`startPrice = ${startPrice}`);
   let fooPrice = foo.replace(/\W/g,'');
-  console.log(`fooPrice = ${fooPrice}`);
   assert.equal(startPrice, fooPrice);
 });
